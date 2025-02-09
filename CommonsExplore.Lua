@@ -27,7 +27,7 @@ end
 
 local function output_commons_items(commons_items)
     -- ニコニコの仕様どおりにコモンズ素材一覧を出力する
-    print(table.concat(commons_items, ","))
+    print(table.concat(commons_items, " "))
 end
 
 local function explore_from_folder(folder,commons_items)
@@ -60,7 +60,6 @@ folder = mediaPool:GetRootFolder()
 
 commons_items = {}
 
--- video
 explore_from_folder(folder,commons_items)
 
 commons_items = remove_duplicates(commons_items)
