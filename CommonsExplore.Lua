@@ -25,7 +25,7 @@ local function remove_duplicates(array)
     return unique
 end
 
-local function output_commons_item(commons_items)
+local function output_commons_items(commons_items)
     -- ニコニコの仕様どおりにコモンズ素材一覧を出力する
     print(table.concat(commons_items, ","))
 end
@@ -64,4 +64,4 @@ commons_items = {}
 explore_from_folder(folder,commons_items)
 
 commons_items = remove_duplicates(commons_items)
-output_commons_item(commons_items)
+output_commons_items(commons_items)
