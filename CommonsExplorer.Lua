@@ -30,7 +30,7 @@ local function output_commons_items(commons_items)
     print(table.concat(commons_items, " "))
 end
 
-local function explore_from_folder(folder,commons_items)
+local function explorer_from_folder(folder,commons_items)
     -- フォルダからコモンズ素材を抽出するやつ
     for k,v in pairs(folder:GetClipList()) do
         -- flagsってなんだよ
@@ -45,7 +45,7 @@ local function explore_from_folder(folder,commons_items)
     for k,v in pairs(folder:GetSubFolderList()) do
         -- だからflagsってなんなんだよ
         if (k ~= "__flags") then
-            explore_from_folder(v,commons_items)
+            explorer_from_folder(v,commons_items)
         end
     end
 end
@@ -60,7 +60,7 @@ folder = mediaPool:GetRootFolder()
 
 commons_items = {}
 
-explore_from_folder(folder,commons_items)
+explorer_from_folder(folder,commons_items)
 
 commons_items = remove_duplicates(commons_items)
 output_commons_items(commons_items)
