@@ -1,7 +1,7 @@
 local function extract_commons_item(file_name)
     -- 文字列からコモンズ素材(nc123456の部分)を抜き出して返す
     -- 抜き出せなかった場合はnil
-    local m = string.match(file_name, "nc[%w_]+")
+    local m = string.match(file_name, "^nc[%w_]+")
     if m == nil then
         return nil
     end
@@ -64,3 +64,5 @@ explorer_from_folder(folder,commons_items)
 
 commons_items = remove_duplicates(commons_items)
 output_commons_items(commons_items)
+
+print("ComomnsExplore_End---------------")
